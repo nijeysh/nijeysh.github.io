@@ -9,26 +9,49 @@
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item{% if page.title == 'Home' %} active{% endif %}" href="{{ '/' | absolute_url }}">Home</a>
+    <a class="sidebar-nav-item{% if page.title == 'Home' %} active{% endif %}" href="{{ '/' | absolute_url }}">All
+      Posts</a>
 
-    {% comment %}
-      The code below dynamically generates a sidebar nav of pages with
-      `layout: page` in the front-matter. See readme for usage.
-    {% endcomment %}
+    <!-- Tech toggle menu -->
+    <a class="sidebar-nav-item" href="javascript:void(0)" onclick="toggleTechMenu()">Tech</a>
+    <div id="tech-submenu" {% unless page.category=='tech' %} style="display:none" {% endunless %}>
+      <a class="sidebar-nav-item sidebar-sub{% if page.url contains '/java' %} active{% endif %}"
+        href="{{ '/tech/java/' | absolute_url }}">Java</a>
+      <a class="sidebar-nav-item sidebar-sub{% if page.url contains '/spring' %} active{% endif %}"
+        href="{{ '/tech/spring/' | absolute_url }}">Spring</a>
+      <a class="sidebar-nav-item sidebar-sub{% if page.url contains '/python' %} active{% endif %}"
+        href="{{ '/tech/python/' | absolute_url }}">Python</a>
+      <a class="sidebar-nav-item sidebar-sub{% if page.url contains '/database' %} active{% endif %}"
+        href="{{ '/tech/database/' | absolute_url }}">Database</a>
+    </div>
 
-    {% assign pages_list = site.pages | sort:"url" %}
-    {% for node in pages_list %}
-      {% if node.title != null %}
-        {% if node.layout == "page" %}
-          <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url | absolute_url }}">{{ node.title }}</a>
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-
-    <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
-    <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
-    <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
+    <a class="sidebar-nav-item{% if page.title == 'About' %} active{% endif %}"
+      href="{{ '/about' | absolute_url }}">About</a>
   </nav>
+
+  <!-- Profile -->
+  <div class="sidebar-profile">
+    <div class="sidebar-profile-links">
+      {% if site.author.github %}
+      <a href="https://github.com/{{ site.author.github }}" target="_blank" title="GitHub">
+        <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
+          <path
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+          </path>
+        </svg>
+      </a>
+      {% endif %}
+      {% if site.author.email %}
+      <a href="mailto:{{ site.author.email }}" title="Email">
+        <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
+          <path
+            d="M1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5C0 2.784.784 2 1.75 2zM1.5 3.75v.736l6.5 3.981 6.5-3.981V3.75a.25.25 0 00-.25-.25H1.75a.25.25 0 00-.25.25zm13 2.17l-6.5 3.98-6.5-3.98v6.33c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V5.92z">
+          </path>
+        </svg>
+      </a>
+      {% endif %}
+    </div>
+  </div>
 
   <div class="sidebar-item">
     <p>

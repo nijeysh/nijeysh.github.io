@@ -1,8 +1,13 @@
-# Ignore docs files
+# Jekyll build output
 _gh_pages
 _site
 .ruby-version
 .jekyll-cache
+.jekyll-metadata
+
+# Ruby / Bundler
+.bundle/
+vendor/
 
 # Numerous always-ignore extensions
 *.diff

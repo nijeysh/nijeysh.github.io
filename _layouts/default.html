@@ -1,31 +1,80 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
+<body>
 
-    {% include sidebar.html %}
+  {% include sidebar.html %}
 
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
+  <div class="wrap">
+    <div class="masthead">
+      <div class="container">
+        <div class="masthead-inner">
           <h3 class="masthead-title">
             <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
             <small>{{ site.tagline }}</small>
           </h3>
+          <div class="masthead-tools">
+            <!-- Search -->
+            <div class="masthead-search" id="masthead-search">
+              <button class="search-toggle tool-btn" id="search-toggle" title="Search" aria-label="Search">
+                <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                  <path
+                    d="M10.68 11.74a6 6 0 01-7.922-8.982 6 6 0 018.982 7.922l3.04 3.04a.749.749 0 01-.326 1.275.749.749 0 01-.734-.215zM11.5 7a4.499 4.499 0 10-8.997 0A4.499 4.499 0 0011.5 7z">
+                  </path>
+                </svg>
+              </button>
+              <input type="text" id="search-input" class="search-input" placeholder="Search..." autocomplete="off">
+              <ul id="search-results" class="search-results"></ul>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="container content">
-        {{ content }}
       </div>
     </div>
 
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    <div class="container content">
+      {{ content }}
+    </div>
+  </div>
 
-    <script src='{{ site.baseurl }}/public/js/script.js'></script>
-  </body>
+  <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  <script src='{{ site.baseurl }}/public/js/script.js'></script>
+  <script src='{{ site.baseurl }}/public/js/search.js'></script>
+  <script>
+    function toggleTechMenu() {
+      var sub = document.getElementById('tech-submenu');
+      sub.style.display = (sub.style.display === 'none') ? 'block' : 'none';
+    }
+
+    // Search toggle
+    (function () {
+      var toggle = document.getElementById('search-toggle');
+      var input = document.getElementById('search-input');
+      var wrap = document.getElementById('masthead-search');
+      if (!toggle || !input) return;
+
+      toggle.addEventListener('click', function () {
+        wrap.classList.toggle('open');
+        if (wrap.classList.contains('open')) {
+          input.focus();
+        } else {
+          input.value = '';
+          document.getElementById('search-results').innerHTML = '';
+        }
+      });
+
+      // Close on outside click
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('#masthead-search')) {
+          wrap.classList.remove('open');
+        }
+      });
+    })();
+
+
+  </script>
+</body>
+
 </html>

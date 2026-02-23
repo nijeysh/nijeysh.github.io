@@ -3,35 +3,50 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
+<div class="post-cards">
   {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url | absolute_url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content }}
-  </div>
+  <a href="{{ post.url | absolute_url }}" class="post-card">
+    <div class="post-card-thumb">
+      {% if post.tags.size > 0 %}
+      <span class="post-card-tag">{{ post.tags | first }}</span>
+      {% endif %}
+    </div>
+    <div class="post-card-body">
+      <h3 class="post-card-title">{{ post.title }}</h3>
+      <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 80 }}</p>
+      <span class="post-card-date">{{ post.date | date: "%b %d, %Y" }}</span>
+    </div>
+  </a>
   {% endfor %}
 </div>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | absolute_url }}">Older</a>
+<div class="pagination-numbers">
+  {% assign win = 5 %}
+  {% assign gs = paginator.page | minus: 1 | divided_by: win | times: win | plus: 1 %}
+  {% assign ge_raw = gs | plus: win | minus: 1 %}
+  {% if ge_raw > paginator.total_pages %}{% assign ge = paginator.total_pages %}{% else %}{% assign ge = ge_raw %}{%
+  endif %}
+
+  {% if gs > 1 %}
+  {% assign prev_page = gs | minus: 1 %}
+  {% if prev_page == 1 %}
+  <a href="{{ '/' | absolute_url }}" class="page-num">&laquo;</a>
   {% else %}
-    <span class="pagination-item older">Older</span>
+  <a href="{{ site.paginate_path | relative_url | replace: ':num', prev_page }}" class="page-num">&laquo;</a>
   {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ '/' | absolute_url }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ paginator.previous_page_path | absolute_url }}">Newer</a>
+  {% endif %}
+
+  {% for page in (gs..ge) %}
+  {% if page == paginator.page %}
+  <span class="page-num active">{{ page }}</span>
+  {% elsif page == 1 %}
+  <a href="{{ '/' | absolute_url }}" class="page-num">1</a>
+  {% else %}
+  <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="page-num">{{ page }}</a>
+  {% endif %}
+  {% endfor %}
+
+  {% if ge < paginator.total_pages %} {% assign next_page=ge | plus: 1 %} <a
+    href="{{ site.paginate_path | relative_url | replace: ':num', next_page }}" class="page-num">&raquo;</a>
     {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
 </div>

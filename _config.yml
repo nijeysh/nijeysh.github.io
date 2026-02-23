@@ -1,17 +1,18 @@
 # Setup
-title:               Nijey
+title:               NI-JEY
 tagline:             'the technical blog'
-description:         'A reserved <a href="https://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer.  <a href="" target="_blank">@</a>.'
+description:         'A technical blog about Java, Spring, and software engineering.'
 url:                 https://nijeysh.github.io/
 baseurl:             ''
-paginate:            5
+paginate:            6
 permalink:           pretty
 
 # About/contact
 author:
   name:              Yejin Shin
-  url:               
+  url:               https://github.com/nijeysh
   email:             yejin6521@naver.com
+  github:            nijeysh
 
 # Gems
 plugins:
