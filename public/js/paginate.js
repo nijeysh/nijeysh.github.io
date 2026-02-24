@@ -4,7 +4,7 @@
     if (!container || !pagination) return;
 
     var cards = Array.from(container.querySelectorAll('[data-post]'));
-    var perPage = 1;
+    var perPage = 2;
     var total = Math.ceil(cards.length / perPage);
     var current = 1;
     var WIN = 5;
