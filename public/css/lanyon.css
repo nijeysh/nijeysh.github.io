@@ -124,11 +124,14 @@ h6 {
   letter-spacing: 0;
 }
 
-@media (max-width: 48em) {
+@media (max-width: 75em) {
   .masthead-title {
-    text-align: center;
+    text-align: left;
+    margin-left: 4rem;
   }
+}
 
+@media (max-width: 48em) {
   .masthead-title small {
     display: none;
   }
@@ -739,9 +742,8 @@ a.pagination-item:hover {
 /* Responsive: small screens */
 @media (max-width: 48em) {
   .masthead-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: .5rem;
+    flex-direction: row;
+    align-items: center;
   }
 
   .masthead-search.open .search-input {
@@ -794,10 +796,26 @@ a.pagination-item:hover {
 .post-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 1fr;
   gap: 1.25rem;
   margin-bottom: 2rem;
-  min-height: 580px;
+}
+
+.empty-posts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  background: #fdfdfd;
+  border: 1px dashed #ddd;
+  border-radius: .5rem;
+  color: #9a9a9a;
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  margin-bottom: 2rem;
+}
+
+.empty-posts p {
+  margin: 0;
+  font-size: 1rem;
 }
 
 .post-card {
@@ -810,6 +828,7 @@ a.pagination-item:hover {
   text-decoration: none;
   color: inherit;
   transition: transform .2s, box-shadow .2s;
+  height: 320px;
 }
 
 .post-card:hover {
@@ -891,14 +910,16 @@ a.pagination-item:hover {
 @media (max-width: 56em) {
   .post-cards {
     grid-template-columns: repeat(2, 1fr);
-    min-height: 580px;
   }
 }
 
 @media (max-width: 38em) {
   .post-cards {
     grid-template-columns: 1fr;
-    min-height: auto;
+  }
+
+  .post-card {
+    height: auto;
   }
 }
 
