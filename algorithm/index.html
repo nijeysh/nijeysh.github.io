@@ -4,8 +4,7 @@ title: Algorithm
 category: algorithm
 ---
 
-{% assign algorithm_conditions = "post.category == 'algorithm' or post.tags contains 'algorithm' or post.tags contains
-'baekjoon' or post.tags contains 'programmers'" %}
+{% assign algorithm_conditions = "post.category == 'algorithm' or post.tags contains 'algorithm'" %}
 {% assign tag_posts = site.posts | where_exp: "post", algorithm_conditions %}
 {% if tag_posts.size > 0 %}
 <div class="post-cards" id="post-cards">
