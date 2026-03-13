@@ -46,9 +46,22 @@
   <script src='{{ site.baseurl }}/public/js/lunr.ko.js'></script>
   <script src='{{ site.baseurl }}/public/js/search.js'></script>
   <script>
+    var sub = document.getElementById('tech-submenu');
+
+    // Load Tech submenu state from localStorage on page load
+    var isTechSubOpen = localStorage.getItem('tech-submenu-open');
+    if (isTechSubOpen === 'true') {
+      sub.style.display = 'block';
+    } else if (isTechSubOpen === 'false') {
+      sub.style.display = 'none';
+      // Note: default is handled by the inline style in sidebar.html based on current page
+    }
+
     function toggleTechMenu() {
-      var sub = document.getElementById('tech-submenu');
-      sub.style.display = (sub.style.display === 'none') ? 'block' : 'none';
+      var isCurrentlyHidden = (sub.style.display === 'none');
+      var newState = isCurrentlyHidden ? 'block' : 'none';
+      sub.style.display = newState;
+      localStorage.setItem('tech-submenu-open', isCurrentlyHidden);
     }
 
 
