@@ -300,6 +300,8 @@ a.sidebar-nav-item:focus {
   backface-visibility: hidden;
 }
 
+
+
 .wrap,
 .sidebar-toggle {
   -webkit-transition: -webkit-transform .3s ease-in-out;
@@ -892,6 +894,12 @@ a.pagination-item:hover {
   font-weight: 600;
   color: #303030;
   line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .post-card-excerpt {
