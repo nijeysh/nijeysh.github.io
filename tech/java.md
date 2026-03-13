@@ -4,7 +4,7 @@ title: Java
 category: tech
 ---
 
-{% assign tag_posts = site.posts | where_exp: "post", "post.tags contains 'java'" %}
+{% assign tag_posts = site.posts | where_exp: "post", "post.category == 'java'" %}
 {% if tag_posts.size > 0 %}
 <div class="post-cards" id="post-cards">
   {% for post in tag_posts %}

@@ -2,6 +2,7 @@
      styles, `#sidebar-checkbox` for behavior. -->
 <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
 
+
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
@@ -14,20 +15,14 @@
 
     <!-- Tech toggle menu -->
     <a class="sidebar-nav-item" href="javascript:void(0)" onclick="toggleTechMenu()">Tech</a>
-    <div id="tech-submenu" {% unless page.category=='tech' %} style="display:none" {% endunless %}>
-      <a class="sidebar-nav-item sidebar-sub{% if page.url contains '/java' %} active{% endif %}"
-        href="{{ '/tech/java/' | absolute_url }}">Java</a>
-      <a class="sidebar-nav-item sidebar-sub{% if page.url contains '/spring' %} active{% endif %}"
-        href="{{ '/tech/spring/' | absolute_url }}">Spring</a>
-      <a class="sidebar-nav-item sidebar-sub{% if page.url contains '/python' %} active{% endif %}"
-        href="{{ '/tech/python/' | absolute_url }}">Python</a>
-      <a class="sidebar-nav-item sidebar-sub{% if page.url contains '/database' %} active{% endif %}"
-        href="{{ '/tech/database/' | absolute_url }}">Database</a>
-      <a class="sidebar-nav-item sidebar-sub{% if page.url contains '/docker' %} active{% endif %}"
-        href="{{ '/tech/docker/' | absolute_url }}">Docker</a>
-      <a class="sidebar-nav-item sidebar-sub{% if page.url contains '/kubernetes' %} active{% endif %}"
-        href="{{ '/tech/kubernetes/' | absolute_url }}">Kubernetes</a>
+    {% assign tech_categories = site.tech_submenu | map: "category" %}
+    <div id="tech-submenu" {% unless tech_categories contains page.category or tech_categories contains page.title %} style="display:none" {% endunless %}>
+      {% for item in site.tech_submenu %}
+      <a class="sidebar-nav-item sidebar-sub{% if page.url contains item.url %} active{% endif %}"
+        href="{{ item.url | absolute_url }}">{{ item.title }}</a>
+      {% endfor %}
     </div>
+
 
     <!-- Algorithm menu -->
     <a class="sidebar-nav-item{% if page.title == 'Algorithm' %} active{% endif %}"

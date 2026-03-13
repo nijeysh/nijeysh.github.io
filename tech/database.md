@@ -4,7 +4,7 @@ title: Database
 category: tech
 ---
 
-{% assign tag_posts = site.posts | where_exp: "post", "post.tags contains 'database'" %}
+{% assign tag_posts = site.posts | where_exp: "post", "post.category == 'database'" %}
 {% if tag_posts.size > 0 %}
 <div class="post-cards" id="post-cards">
   {% for post in tag_posts %}

@@ -4,7 +4,7 @@ title: Spring
 category: tech
 ---
 
-{% assign tag_posts = site.posts | where_exp: "post", "post.tags contains 'spring'" %}
+{% assign tag_posts = site.posts | where_exp: "post", "post.category == 'spring'" %}
 {% if tag_posts.size > 0 %}
 <div class="post-cards" id="post-cards">
   {% for post in tag_posts %}

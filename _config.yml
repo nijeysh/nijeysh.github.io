@@ -22,3 +22,23 @@ plugins:
 # Custom vars
 version:             1.1.0
 google_analytics_id: #UA-XXXX-Y
+
+tech_submenu:
+  - title: "Java"
+    url: "/tech/java/"
+    category: "java"
+  - title: "Spring"
+    url: "/tech/spring/"
+    category: "spring"
+  - title: "Python"
+    url: "/tech/python/"
+    category: "python"
+  - title: "Database"
+    url: "/tech/database/"
+    category: "database"
+  - title: "Docker"
+    url: "/tech/docker/"
+    category: "docker"
+  - title: "Kubernetes"
+    url: "/tech/kubernetes/"
+    category: "kubernetes"
