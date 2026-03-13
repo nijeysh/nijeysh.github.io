@@ -2,6 +2,7 @@
 layout: post
 title: "Spring Data JPA 기초 - Repository 패턴"
 date: 2025-02-16
+category: spring
 tags: [spring, java]
 ---
 

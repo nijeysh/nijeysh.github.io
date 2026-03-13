@@ -2,7 +2,7 @@
 layout: post
 title: "Spring Self-Injection — 같은 서비스 내에서 AOP(@Async, @Transactional 등)를 적용하는 방법"
 date: 2026-03-11
-category: tech
+category: java
 tags: [java, spring, aop, async]
 ---
 

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Spring Cache와 @Cacheable 어노테이션 알아보기"
-category: tech
+date: 2026-02-27
+category: java
 tags: [java, spring, cache]
 ---
 

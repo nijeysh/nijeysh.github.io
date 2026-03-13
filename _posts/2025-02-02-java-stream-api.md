@@ -2,6 +2,7 @@
 layout: post
 title: "Java 스트림(Stream) API 활용법"
 date: 2025-01-26
+category: java
 tags: [java]
 ---
 

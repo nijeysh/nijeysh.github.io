@@ -2,6 +2,7 @@
 layout: post
 title: "RSA 암호화를 활용한 외부 API 통신 보안 (Spring/Java)"
 date: 2025-02-25
+category: java
 tags: [java, spring, security]
 ---
 

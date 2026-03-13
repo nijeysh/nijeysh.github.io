@@ -2,6 +2,7 @@
 layout: post
 title: "Spring Boot 시작하기 - 프로젝트 구조 이해"
 date: 2025-02-09
+category: spring
 tags: [spring, java]
 ---
 

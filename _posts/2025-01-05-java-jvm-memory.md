@@ -2,6 +2,7 @@
 layout: post
 title: "Java 기초 - JVM과 메모리 구조"
 date: 2025-01-05
+category: java
 tags: [java]
 ---
 

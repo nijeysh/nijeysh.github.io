@@ -2,6 +2,7 @@
 layout: post
 title: "Java 멀티스레딩 - synchronized와 volatile"
 date: 2025-02-23
+category: java
 tags: [java]
 ---
 
