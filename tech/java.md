@@ -23,7 +23,5 @@ category: tech
 <div class="pagination-numbers" id="pagination"></div>
 <script src="{{ site.baseurl }}/public/js/paginate.js"></script>
 {% else %}
-<div class="empty-posts">
-  <p>조회된 게시글이 없습니다.</p>
-</div>
+{% include empty-posts.html %}
 {% endif %}

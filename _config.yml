@@ -42,3 +42,6 @@ tech_submenu:
   - title: "Kubernetes"
     url: "/tech/kubernetes/"
     category: "kubernetes"
+  - title: "Web"
+    url: "/tech/web/"
+    category: "web"

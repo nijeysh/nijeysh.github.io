@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Database
+title: Web
 category: tech
 ---
 
-{% assign tag_posts = site.posts | where_exp: "post", "post.category == 'database'" %}
+{% assign tag_posts = site.posts | where_exp: "post", "post.category == 'web'" %}
 {% if tag_posts.size > 0 %}
 <div class="post-cards" id="post-cards">
   {% for post in tag_posts %}
   <a href="{{ post.url | absolute_url }}" class="post-card" data-post>
     <div class="post-card-thumb">
-      <span class="post-card-tag">database</span>
+      <span class="post-card-tag">web</span>
     </div>
     <div class="post-card-body">
       <h3 class="post-card-title">{{ post.title }}</h3>
