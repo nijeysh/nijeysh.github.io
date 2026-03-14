@@ -6,6 +6,14 @@ category: web
 tags: [vercel, deploy, cli, github]
 ---
 
+최근 간단한 사이트를 배포하기 위해 찾아보다가 Vercel 이라는 서비스를 알게 되었다.
+
+Vercel이란?
+- Next.js를 만든 회사에서 만든 프론트엔드 중심의 클라우드 호스팅/배포 플랫폼이다.  
+- 직접 만져야하는 복잡한 AWS보다, Git push만으로 배포가 가능하도록 하는 것에 초점을 맞춘 PaaS이다.
+
+---
+
 Vercel을 사용하여 프론트엔드 프로젝트를 배포하는 방법은 크게 두 가지로 나눌 수 있다.
 
 1. **GitHub 레포지토리와 연동하여 Push할 때마다 자동 배포하기 (CI/CD)**
@@ -63,14 +71,6 @@ Deployed to production. Run `vercel --prod` to overwrite later
 ```
 
 해당 명령어를 실행하면 최종적으로 **Production URL**(`https://프로젝트명.vercel.app` 형태)을 발급해준다.
-
-### 2-3. 기존 프로젝트 연결
-
-재배포를 하려면 기존 프로젝트를 연결하면 된다.
-
-```
-vercel link
-```
 
 ---
 
