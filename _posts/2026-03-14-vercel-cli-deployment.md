@@ -48,10 +48,6 @@ vercel
 ```
 
 명령어를 실행하면 배포 관련 메뉴가 나온다.
-만약 repository를 연동하고 싶지 않다면 다음과 같이 설정하면 된다.
-```
-Link to existing project? no
-```
 
 - **Set up and deploy "~"? [Y/n]**: `Y` (현재 폴더 배포)
 - **Which scope do you want to deploy to?**: 배포할 계정 선택
@@ -76,7 +72,9 @@ Deployed to production. Run `vercel --prod` to overwrite later
 vercel link
 ```
 
+---
 
 ## 마무리
 
-아주 간단하게 react 프로젝트를 배포할 수 있었다. 
+아주 간단하게 무료로 React 프로젝트를 배포할 수 있었다. 
+사이드 프로젝트를 빠르게 배포하고 싶거나 간단한 사이트를 만들고 싶을 때 유용할 것 같다.
