@@ -76,5 +76,5 @@ Deployed to production. Run `vercel --prod` to overwrite later
 
 ## 마무리
 
-아주 간단하게 무료로 React 프로젝트를 배포할 수 있었다. 
+아주 간단하게 무료로 React 프로젝트를 배포할 수 있었다.  
 사이드 프로젝트를 빠르게 배포하고 싶거나 간단한 사이트를 만들고 싶을 때 유용할 것 같다.

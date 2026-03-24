@@ -51,7 +51,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-sans);
-  font-weight: 400;
+  font-weight: 600;
   color: #313131;
   letter-spacing: -.025rem;
 }
