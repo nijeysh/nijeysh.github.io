@@ -40,6 +40,16 @@
 
   <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
+  <!-- Font loading: fade-in body after fonts are ready -->
+  <script>
+    document.fonts.ready.then(function () {
+      document.body.classList.add('fonts-loaded');
+    });
+    setTimeout(function () {
+      document.body.classList.add('fonts-loaded');
+    }, 2000);
+  </script>
+
   <script src='{{ site.baseurl }}/public/js/script.js'></script>
   <script src='{{ site.baseurl }}/public/js/lunr.min.js'></script>
   <script src='{{ site.baseurl }}/public/js/lunr.stemmer.support.js'></script>
