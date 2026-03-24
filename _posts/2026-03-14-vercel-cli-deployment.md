@@ -31,7 +31,7 @@ Vercel을 사용하여 프론트엔드 프로젝트를 배포하는 방법은 �
 
 ## 2. GitHub 연동 없이 터미널 배포하기 (Vercel CLI)
 
-github repository와 연동하지 않고 로컬에서 바로 배포하는 방법으로 진행해본다.
+github repository와 연동하지 않고 로컬에서 바로 배포하는 방법으로 진행해보자.
 
 ### 2-1. Vercel CLI 설치하기
 
