@@ -4,7 +4,7 @@ title: "스크래핑 서비스 재구성하기 - Spring Modulith를 고민하는
 date: 2026-06-18
 category: spring
 tags: [spring, architecture, spring-modulith, scraping, batch, react]
-published: false
+published: true
 ---
 
 3년 전에 런칭된 서비스를 유지보수하게 되었다.  
