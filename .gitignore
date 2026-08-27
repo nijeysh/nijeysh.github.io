@@ -1,6 +1,7 @@
 # Jekyll build output
 _gh_pages
 _site
+.jekyll-serve
 .ruby-version
 .jekyll-cache
 .jekyll-metadata

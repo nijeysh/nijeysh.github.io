@@ -38,7 +38,7 @@ tags: [tag1, tag2]
 
 - **`layout`**: 무조건 `post` 로 고정한다.
 - **`title`**: 글의 제목을 작성한다.
-- **`category`**: 소문자 형식으로 작성하며, `_config.yml`의 `tech_submenu` 혹은 `algorithm`, `git` 등에 사전 정의된 카테고리만 사용한다. (예: `java`, `spring`, `git`, `web`)
+- **`category`**: 소문자 형식으로 작성하며, `_config.yml`의 `tech_submenu` 혹은 `algorithm`, `git` 등에 사전 정의된 카테고리만 사용한다. (예: `java`, `spring`, `ai`, `git`, `web`)
 - **`tags`**: 소문자 영문으로 작성하여 통일감을 유지한다. 배열 형태인 `[tag1, tag2]` 로 작성한다.
 
 ## 4. 제목 및 헤딩 규칙 (Headings)
