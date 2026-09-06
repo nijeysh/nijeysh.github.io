@@ -2,6 +2,7 @@
 _gh_pages
 _site
 .jekyll-serve
+.jekyll-build-test
 .ruby-version
 .jekyll-cache
 .jekyll-metadata
